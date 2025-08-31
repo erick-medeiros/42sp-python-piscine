@@ -1,0 +1,10 @@
+[tools]
+python = "3.10"
+uv = "latest"
+
+[env]
+_.python.venv = { path = ".venv", create = true}
+
+[tasks.norminette]
+# alias norminette=flake8
+run = "flake8 --exclude=.venv ."
