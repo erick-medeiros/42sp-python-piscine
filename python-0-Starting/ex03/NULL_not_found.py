@@ -1,10 +1,7 @@
-import math
-
-
 def NULL_not_found(object: any) -> int:
     if isinstance(object, type(None)):
         print("Nothing: None", type(None))
-    elif isinstance(object, float) and math.isnan(object):
+    elif isinstance(object, float) and object != object:
         print("Cheese: nan", type(object))
     elif isinstance(object, bool) and object is False:
         print("Fake: False", type(object))
