@@ -1,0 +1,17 @@
+```sh
+$>python tester.py | cat -e
+List : <class 'list'>$
+Tuple : <class 'tuple'>$
+Set : <class 'set'>$
+Dict : <class 'dict'>$
+Brian is in the kitchen : <class 'str'>$
+Toto is in the kitchen : <class 'str'>$
+Type not found$
+42$
+$>
+```
+
+```sh
+$>python find_ft_type.py | cat -e
+$>
+```
