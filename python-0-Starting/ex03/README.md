@@ -1,4 +1,4 @@
-```sh`
+```sh
 $>python tester.py | cat -e
 Nothing: None <class 'NoneType'>$
 Cheese: nan <class 'float'>$
