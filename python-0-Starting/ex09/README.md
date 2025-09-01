@@ -1,18 +1,13 @@
 # ft_package
 
-## Build
+## Description
 
-```
-pip3 install --upgrade pip
-pip3 install build
-python3.10 -m build
-```
+`ft_package` is a simple Python package created for educational purposes. It demonstrates how to build, install, test, and uninstall a custom package using Python and pip. The package includes basic functionality and example tests to help users understand package management and distribution.
 
 ## Install
 
 ```
-pip3 install ./dist/ft_package-0.0.1.tar.gz
-pip3 install ./dist/ft_package-0.0.1-py3-none-any.whl
+python3.10 install.py
 ```
 
 ## Display
