@@ -16,12 +16,9 @@ def main():
         s, n = args[0], args[1]
         n = int(n)
 
-        def func(word):
-            return len(word) > n
+        filtered = list(ft_filter(lambda word: len(word) > n, s.split()))
 
-        filtered_words = [word for word in ft_filter(func, s.split())]
-
-        print(filtered_words)
+        print(filtered)
 
     except (ValueError, AssertionError):
         print("AssertionError: the arguments are bad")
