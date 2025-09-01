@@ -5,6 +5,10 @@ def main():
     """
     Main function to test ft_filter with various cases.
     """
+
+    # Test 0: filter docstring
+    assert ft_filter.__doc__ == filter.__doc__
+
     # Test 1: Filter even numbers
     result = list(ft_filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5]))
     assert result == [2, 4], f"Expected [2, 4], got {result}"
