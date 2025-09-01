@@ -2,8 +2,6 @@ import os
 
 
 def build():
-    os.system("pip3 install --upgrade pip")
-    os.system("pip3 install build")
     os.system("python3.10 -m build")
 
 
