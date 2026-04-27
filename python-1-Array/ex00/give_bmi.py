@@ -32,9 +32,8 @@ def apply_limit(
     if not isinstance(bmi, list):
         raise TypeError("bmi must be a list")
 
-    for i in bmi:
-        if not isinstance(i, (int, float)):
-            raise TypeError("List elements must be int or float")
+    if not all(isinstance(i, (int, float)) for i in bmi):
+        raise TypeError("List elements must be int or float")
 
     if not isinstance(limit, int):
         raise TypeError("limit must be an int")
