@@ -20,7 +20,7 @@ def give_bmi(
     h = np.array(height, dtype=float)
     w = np.array(weight, dtype=float)
 
-    return [float(v) for v in w / (h ** 2)]
+    return [float(v) for v in w / (h**2)]
 
 
 def apply_limit(
