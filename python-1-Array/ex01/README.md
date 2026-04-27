@@ -1,0 +1,8 @@
+$> python test_array2D.py
+My shape is : (4, 2)
+My new shape is : (2, 2)
+[[1.8, 78.4], [2.15, 102.7]]
+My shape is : (4, 2)
+My new shape is : (1, 2)
+[[2.15, 102.7]]
+$>
