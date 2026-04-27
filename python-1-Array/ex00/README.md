@@ -1,0 +1,4 @@
+$> python tester.py
+[22.507863455018317, 29.0359168241966] <class 'list'>
+[False, True]
+$>
