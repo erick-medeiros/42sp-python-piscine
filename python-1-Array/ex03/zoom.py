@@ -11,11 +11,15 @@ def zoom_image(array: np.ndarray) -> np.ndarray:
         array: numpy array of the original image in RGB format.
 
     Returns:
-        numpy array of shape (400, 400, 1) in grayscale.
+        numpy array of shape (400, 400, 1) in grayscale, or None on error.
     """
-    sliced = array[0:400, 0:400]
-    grey = np.mean(sliced, axis=2, keepdims=True).astype(np.uint8)
-    return grey
+    try:
+        sliced = array[0:400, 0:400]
+        grey = np.mean(sliced, axis=2, keepdims=True).astype(np.uint8)
+        return grey
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
 
 
 def display_image(grey: np.ndarray) -> None:
@@ -24,11 +28,14 @@ def display_image(grey: np.ndarray) -> None:
     Args:
         grey: numpy array of shape (400, 400, 1).
     """
-    plt.figure()
-    plt.imshow(grey[:, :, 0], cmap='gray')
-    plt.xlabel("X scale (pixels)")
-    plt.ylabel("Y scale (pixels)")
-    plt.show()
+    try:
+        plt.figure()
+        plt.imshow(grey[:, :, 0], cmap='gray')
+        plt.xlabel("X scale (pixels)")
+        plt.ylabel("Y scale (pixels)")
+        plt.show()
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 def main():
