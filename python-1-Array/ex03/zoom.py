@@ -25,6 +25,8 @@ def display_image(grey: np.ndarray) -> None:
     """
     plt.figure()
     plt.imshow(grey[:, :, 0], cmap='gray')
+    plt.xlabel("X scale (pixels)")
+    plt.ylabel("Y scale (pixels)")
     plt.show()
 
 
