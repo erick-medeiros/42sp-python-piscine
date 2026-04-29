@@ -1,16 +1,17 @@
+"""Module to load, zoom and display an image as grayscale."""
 import numpy as np
 import matplotlib.pyplot as plt
 from load_image import ft_load
 
 
 def zoom_image(array: np.ndarray) -> np.ndarray:
-    """Slice a 400x400 square from the image and convert to grayscale.
+    """Slice a 400x400 square and convert it to grayscale.
 
     Args:
         array: numpy array of the original image in RGB format.
 
     Returns:
-        numpy array of the zoomed grayscale image with shape (400, 400, 1).
+        numpy array of shape (400, 400, 1) in grayscale.
     """
     sliced = array[0:400, 0:400]
     grey = np.mean(sliced, axis=2, keepdims=True).astype(np.uint8)
@@ -18,10 +19,10 @@ def zoom_image(array: np.ndarray) -> np.ndarray:
 
 
 def display_image(grey: np.ndarray) -> None:
-    """Display the zoomed grayscale image with axis scales.
+    """Display a grayscale image with labelled axis scales.
 
     Args:
-        grey: numpy array of the grayscale image with shape (400, 400, 1).
+        grey: numpy array of shape (400, 400, 1).
     """
     plt.figure()
     plt.imshow(grey[:, :, 0], cmap='gray')
@@ -31,7 +32,7 @@ def display_image(grey: np.ndarray) -> None:
 
 
 def main():
-    """Load animal.jpeg, zoom in, print info, and display the result."""
+    """Load animal.jpeg, zoom in, and display the grayscale result."""
     try:
         array = ft_load("animal.jpeg")
         if array is None:

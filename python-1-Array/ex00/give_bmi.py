@@ -1,3 +1,4 @@
+"""Module to compute BMI values and flag entries above a limit."""
 import numpy as np
 
 
@@ -5,7 +6,15 @@ def give_bmi(
     height: list[int | float],
     weight: list[int | float],
 ) -> list[int | float]:
-    """Calculate BMI from height (m) and weight (kg) lists."""
+    """Compute the BMI for each (height, weight) pair.
+
+    Args:
+        height: list of heights in meters (int or float).
+        weight: list of weights in kilograms (int or float).
+
+    Returns:
+        List of BMI values as floats.
+    """
 
     if not isinstance(height, list) or not isinstance(weight, list):
         raise TypeError("Arguments must be lists")
@@ -27,7 +36,15 @@ def apply_limit(
     bmi: list[int | float],
     limit: int,
 ) -> list[bool]:
-    """Return a list of booleans, True if bmi value is above limit."""
+    """Return a list of booleans flagging BMI values above a limit.
+
+    Args:
+        bmi: list of BMI values (int or float).
+        limit: integer threshold.
+
+    Returns:
+        List of booleans, True where bmi > limit.
+    """
 
     if not isinstance(bmi, list):
         raise TypeError("bmi must be a list")
@@ -44,7 +61,7 @@ def apply_limit(
 
 
 def main():
-    """Test give_bmi and apply_limit functions."""
+    """Run a quick test of give_bmi and apply_limit."""
     try:
         height = [2.71, 1.15]
         weight = [165.3, 38.4]

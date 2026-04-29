@@ -1,8 +1,18 @@
+"""Module to print a 2D array shape and return a sliced version of it."""
 import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
-    """Print shape of 2D array and return a sliced version of it."""
+    """Print the 2D array shape and return a sliced version of it.
+
+    Args:
+        family: 2D list with rows of equal length.
+        start: starting row index for the slice.
+        end: ending row index for the slice.
+
+    Returns:
+        Sliced 2D list.
+    """
 
     if not isinstance(family, list):
         raise TypeError("family must be a list")
@@ -28,7 +38,7 @@ def slice_me(family: list, start: int, end: int) -> list:
 
 
 def main():
-    """Test slice_me function."""
+    """Run a quick test of slice_me."""
     try:
         family = [
             [1.80, 78.4],

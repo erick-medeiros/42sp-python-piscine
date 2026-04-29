@@ -5,10 +5,10 @@ from load_image import ft_load
 
 
 def manual_transpose(array: np.ndarray) -> np.ndarray:
-    """Transpose a 2D array manually without using any library.
+    """Transpose a 2D array manually, without any transpose helper.
 
     Args:
-        array: numpy array of shape (rows, cols).
+        array: 2D numpy array of shape (rows, cols).
 
     Returns:
         Transposed numpy array of shape (cols, rows).
@@ -22,7 +22,7 @@ def manual_transpose(array: np.ndarray) -> np.ndarray:
 
 
 def zoom_image(array: np.ndarray) -> np.ndarray:
-    """Slice a 400x400 square and convert to grayscale (1 channel).
+    """Slice a 400x400 square and convert it to grayscale.
 
     Args:
         array: numpy array of the original image in RGB format.
@@ -36,7 +36,7 @@ def zoom_image(array: np.ndarray) -> np.ndarray:
 
 
 def display_image(array: np.ndarray) -> None:
-    """Display the image with axis scales.
+    """Display a 2D image in grayscale.
 
     Args:
         array: 2D numpy array to display.
@@ -47,7 +47,7 @@ def display_image(array: np.ndarray) -> None:
 
 
 def main():
-    """Load animal.jpeg, slice, transpose manually, and display."""
+    """Load animal.jpeg, slice, transpose manually, and display the result."""
     try:
         array = ft_load("animal.jpeg")
         if array is None:

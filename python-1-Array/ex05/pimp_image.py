@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 
 
 def ft_invert(array: np.ndarray) -> np.ndarray:
-    """Invert the colors of the image received.
+    """Invert the colors of the image.
 
     Args:
         array: numpy array of the image in RGB format.
 
     Returns:
-        numpy array with inverted colors.
+        numpy array with inverted colors, same shape as input.
     """
     result = 255 - array
     plt.imshow(result)
@@ -19,13 +19,13 @@ def ft_invert(array: np.ndarray) -> np.ndarray:
 
 
 def ft_red(array: np.ndarray) -> np.ndarray:
-    """Apply a red filter to the image.
+    """Keep only the red channel of the image.
 
     Args:
         array: numpy array of the image in RGB format.
 
     Returns:
-        numpy array with only the red channel.
+        numpy array with only the red channel, same shape as input.
     """
     result = array * [1, 0, 0]
     plt.imshow(result)
@@ -34,13 +34,13 @@ def ft_red(array: np.ndarray) -> np.ndarray:
 
 
 def ft_green(array: np.ndarray) -> np.ndarray:
-    """Apply a green filter to the image.
+    """Keep only the green channel of the image.
 
     Args:
         array: numpy array of the image in RGB format.
 
     Returns:
-        numpy array with only the green channel.
+        numpy array with only the green channel, same shape as input.
     """
     result = array.copy()
     result[:, :, 0] = result[:, :, 0] - result[:, :, 0]
@@ -51,13 +51,13 @@ def ft_green(array: np.ndarray) -> np.ndarray:
 
 
 def ft_blue(array: np.ndarray) -> np.ndarray:
-    """Apply a blue filter to the image.
+    """Keep only the blue channel of the image.
 
     Args:
         array: numpy array of the image in RGB format.
 
     Returns:
-        numpy array with only the blue channel.
+        numpy array with only the blue channel, same shape as input.
     """
     result = array.copy()
     result[:, :, 0] = 0
@@ -68,13 +68,13 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
 
 
 def ft_grey(array: np.ndarray) -> np.ndarray:
-    """Apply a grey filter to the image.
+    """Convert the image to greyscale.
 
     Args:
         array: numpy array of the image in RGB format.
 
     Returns:
-        numpy array in greyscale.
+        numpy array in greyscale, same shape as input.
     """
     result = array / 1
     grey = np.mean(result, axis=2, keepdims=True)
@@ -85,7 +85,7 @@ def ft_grey(array: np.ndarray) -> np.ndarray:
 
 
 def main():
-    """Test all filter functions."""
+    """Apply each color filter to landscape.jpg and display the results."""
     try:
         from load_image import ft_load
         array = ft_load("landscape.jpg")
