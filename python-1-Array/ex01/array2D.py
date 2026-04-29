@@ -7,6 +7,9 @@ def slice_me(family: list, start: int, end: int) -> list:
     if not isinstance(family, list):
         raise TypeError("family must be a list")
 
+    if not family:
+        raise ValueError("family must not be empty")
+
     if not all(isinstance(row, list) for row in family):
         raise TypeError("family must be a 2D list")
 
