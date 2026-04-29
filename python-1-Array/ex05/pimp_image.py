@@ -42,7 +42,9 @@ def ft_green(array: np.ndarray) -> np.ndarray:
     Returns:
         numpy array with only the green channel.
     """
-    result = array - array * [1, 0, 1]
+    result = array.copy()
+    result[:, :, 0] = result[:, :, 0] - result[:, :, 0]
+    result[:, :, 2] = result[:, :, 2] - result[:, :, 2]
     plt.imshow(result)
     plt.show()
     return result
@@ -74,10 +76,10 @@ def ft_grey(array: np.ndarray) -> np.ndarray:
     Returns:
         numpy array in greyscale.
     """
-    result = array / [3, 3, 3]
-    result = (result[:, :, 0] + result[:, :, 1] + result[:, :, 2])
-    result = np.stack([result, result, result], axis=2).astype(np.uint8)
-    plt.imshow(result, cmap='gray')
+    result = array / 1
+    grey = np.mean(result, axis=2, keepdims=True)
+    result = np.repeat(grey, 3, axis=2).astype(np.uint8)
+    plt.imshow(result)
     plt.show()
     return result
 
